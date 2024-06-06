@@ -1,0 +1,1275 @@
+{
+  "name": "aws",
+  "id": "aws",
+  "version": "1.2",
+  "requires": [
+    "UIFBASE@11.13.23",
+    "gcp@1.0",
+    "aws@1.2",
+    "BPM_Reports@1.0"
+  ],
+  "content": {
+    "menu": [
+      {
+        "pageId": "7cT2RS",
+        "categoryId": "0_L4_SA_Cloud_Monitoring_AWS",
+        "id": "SIeGPy",
+        "options": {},
+        "description": "",
+        "icon": "qtm-font-icon qtm-icon-dashboard",
+        "context": {
+          "items": [],
+          "start": 1717528567290,
+          "end": 1717571767290,
+          "tft": "RL12hours",
+          "menuItemId": "SIeGPy"
+        },
+        "fullControl": true,
+        "title": "ASG: Service Overview"
+      }
+    ],
+    "pages": [
+      {
+        "id": "7cT2RS",
+        "view": {
+          "id": "mashup",
+          "type": "mashup",
+          "views": [
+            {
+              "id": "ddced958-f6f3-450a-a85d-a990d61213c7",
+              "type": "mashup",
+              "views": [
+                {
+                  "id": "0ce47636-b755-4f23-b31e-8c91a9896471",
+                  "vid": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954",
+                  "type": "mashup",
+                  "views": [
+                    {
+                      "id": "13fa0365-12cb-4059-bd1e-d13faa870693",
+                      "vid": "13fa0365-12cb-4059-bd1e-d13faa870693b0dd6f59-7a61-42f4-b2d9-415d04e41061",
+                      "type": "text",
+                      "views": null,
+                      "layout": {
+                        "col": 7,
+                        "row": 0,
+                        "span": 1,
+                        "colSpan": 4,
+                        "rowSpan": 2,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [
+                        {
+                          "id": "uifWidgetTitleDrillDown",
+                          "type": "drilldown",
+                          "options": {
+                            "widgetId": "13fa0365-12cb-4059-bd1e-d13faa870693b0dd6f59-7a61-42f4-b2d9-415d04e41061"
+                          },
+                          "inlineAction": true
+                        }
+                      ],
+                      "options": {
+                        "title": "<New Markdown>",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "data",
+                              "query": "opsb_aws_asgService_instance_and_type_count_of_asg",
+                              "params": {
+                                "sys": "${.items[?(@.type=='sys')].timezone}",
+                                "tft": "${.tft}",
+                                "Calendar:end": "${.end}",
+                                "monSvcConfig": "${.items[?(@.type=='monSvcConfig')].id}",
+                                "monSvcEC2Tags": "${.items[?(@.type=='monSvcEC2Tags')].id}",
+                                "Calendar:start": "${.start}",
+                                "monSvcAwsRegion": "${.items[?(@.type=='monSvcAwsRegion')].id}",
+                                "monSvcAwsAccount": "${.items[?(@.type=='monSvcAwsAccount')].id}"
+                              },
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "text": "<div style=\"display: flex; flex-direction: column;align-items: center; justify-content: center; margin-top:-10px\">\n<div style=\"font-size: 0.9rem; color: grey\">\n<em>Instance Types</em>\n</div>\n<br>\n<div style=\"font-size: 2.5rem; margin-top:-13px\">\n{{type_cnt}}\n</div>\n</div>",
+                          "styleTables": "true"
+                        },
+                        "context": {
+                          "mapped": {
+                            "types": []
+                          },
+                          "incoming": {
+                            "types": [
+                              "monSvcConfig",
+                              "monSvcAwsAccount",
+                              "monSvcAwsRegion",
+                              "monSvcEC2Tags"
+                            ]
+                          }
+                        },
+                        "timeSelector": "timeRange"
+                      },
+                      "configTemplate": {
+                        "icon": "qtm-icon-markdown",
+                        "label": "widget.type.text",
+                        "order": 2,
+                        "groupId": "__uisPaletteGroupGeneral",
+                        "version": 1,
+                        "iconColor": "#0073E7",
+                        "skipWidgetCreation": false
+                      },
+                      "hideWidgetFrame": false
+                    },
+                    {
+                      "id": "42479176-e921-4f1d-9fbf-b3edf0d5c152",
+                      "vid": "42479176-e921-4f1d-9fbf-b3edf0d5c1520c8aafb4-a402-470e-84e8-d5991b23b756",
+                      "type": "text",
+                      "views": null,
+                      "layout": {
+                        "col": 1,
+                        "row": 0,
+                        "span": 1,
+                        "colSpan": 4,
+                        "rowSpan": 2,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [
+                        {
+                          "id": "uifWidgetTitleDrillDown",
+                          "type": "drilldown",
+                          "options": {
+                            "widgetId": "42479176-e921-4f1d-9fbf-b3edf0d5c1520c8aafb4-a402-470e-84e8-d5991b23b756"
+                          },
+                          "inlineAction": true
+                        }
+                      ],
+                      "options": {
+                        "title": "<New Markdown>",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "data",
+                              "query": "opsb_aws_asgService_instance_and_type_count_of_asg",
+                              "params": {
+                                "sys": "${.items[?(@.type=='sys')].timezone}",
+                                "tft": "${.tft}",
+                                "Calendar:end": "${.end}",
+                                "monSvcConfig": "${.items[?(@.type=='monSvcConfig')].id}",
+                                "monSvcEC2Tags": "${.items[?(@.type=='monSvcEC2Tags')].id}",
+                                "Calendar:start": "${.start}",
+                                "monSvcAwsRegion": "${.items[?(@.type=='monSvcAwsRegion')].id}",
+                                "monSvcAwsAccount": "${.items[?(@.type=='monSvcAwsAccount')].id}"
+                              },
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "text": "<div style=\"display: flex; flex-direction: column;align-items: center; justify-content: center; margin-top:-10px\">\n<div style=\"font-size: 0.9rem; color: grey\">\n<em>Instances</em>\n</div>\n<br>\n<div style=\"font-size: 2.5rem; ; margin-top:-13px\">\n{{id_cnt}}\n</div>\n</div>",
+                          "styleTables": "true"
+                        },
+                        "context": {
+                          "mapped": {
+                            "types": []
+                          },
+                          "incoming": {
+                            "types": [
+                              "monSvcConfig",
+                              "monSvcAwsAccount",
+                              "monSvcAwsRegion",
+                              "monSvcEC2Tags"
+                            ]
+                          }
+                        },
+                        "timeSelector": "timeRange"
+                      },
+                      "configTemplate": {
+                        "icon": "qtm-icon-markdown",
+                        "label": "widget.type.text",
+                        "order": 2,
+                        "groupId": "__uisPaletteGroupGeneral",
+                        "version": 1,
+                        "iconColor": "#0073E7",
+                        "skipWidgetCreation": false
+                      },
+                      "hideWidgetFrame": false
+                    },
+                    {
+                      "id": "25c2a11a-65af-4c1f-b9b6-b08e96a39262",
+                      "vid": "25c2a11a-65af-4c1f-b9b6-b08e96a392628988c4f0-a672-4bb5-bc5f-28c1e4060bd3",
+                      "type": "echart",
+                      "views": null,
+                      "layout": {
+                        "col": 0,
+                        "row": 2,
+                        "span": 1,
+                        "colSpan": 12,
+                        "rowSpan": 7,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [],
+                      "options": {
+                        "title": "widget.edit.newChartWidget.title",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "DataCollector-Chart",
+                              "query": "",
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "graph": [
+                            {
+                              "data": "DataCollector-Chart",
+                              "name": "",
+                              "type": "line",
+                              "unit": null,
+                              "value": "value",
+                              "category": "",
+                              "timestamp": "timestamp",
+                              "displayName": "new"
+                            }
+                          ]
+                        },
+                        "showHelpMessageForAddWidget": true
+                      },
+                      "hideWidgetFrame": false
+                    }
+                  ],
+                  "layout": {
+                    "span": 1,
+                    "colSpan": 4,
+                    "rowSpan": 8,
+                    "resizable": true,
+                    "autoPositioning": false
+                  },
+                  "actions": [
+                    {
+                      "id": "exportToCSV",
+                      "type": "exportToCSV",
+                      "options": {
+                        "icon": "qtm-icon-document-csv",
+                        "name": "widget.action.exportToCSV",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "refreshWidget",
+                      "type": "refreshWidget",
+                      "options": {
+                        "icon": "qtm-icon-refresh",
+                        "name": "widget.action.refresh",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "edit",
+                      "type": "edit",
+                      "options": {
+                        "icon": "qtm-icon-edit",
+                        "name": "widget.action.edit",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "chooseColumns",
+                      "type": "chooseColumns",
+                      "options": {
+                        "icon": "qtm-icon-column",
+                        "name": "widget.action.chooseColumns",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "duplicateWidget",
+                      "type": "duplicateWidget",
+                      "options": {
+                        "icon": "qtm-icon-duplicate",
+                        "name": "widget.action.duplicate",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "fullscreen",
+                      "type": "fullscreen",
+                      "options": {
+                        "icon": "qtm-icon-fullscreen",
+                        "name": "widget.action.fullscreen",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "removeWidget",
+                      "type": "removeWidget",
+                      "options": {
+                        "icon": "qtm-icon-close",
+                        "name": "widget.action.remove",
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954"
+                      }
+                    },
+                    {
+                      "id": "addWidget",
+                      "type": "addWidget",
+                      "options": {
+                        "icon": "add",
+                        "mode": "inline",
+                        "name": {
+                          "l10n": "widget.action.addWidget",
+                          "default": "Add Widget"
+                        },
+                        "size": "S",
+                        "config": {
+                          "cancelButtonTitle": {
+                            "l10n": "sidepanel.title.cancel",
+                            "default": "CANCEL"
+                          }
+                        },
+                        "widget": {
+                          "id": "uif_add_widget_panel"
+                        },
+                        "widgetId": "0ce47636-b755-4f23-b31e-8c91a9896471354fdcd0-7b64-4330-840f-9e4ac9342954",
+                        "directApplyMode": true
+                      },
+                      "inlineAction": true
+                    }
+                  ],
+                  "options": {
+                    "title": "Instances",
+                    "scroll": "none",
+                    "placeholder": "uif.data.viz.group.widget.placeholder",
+                    "hideWidgetFrame": false,
+                    "dashboardOptions": {
+                      "columns": 12,
+                      "minWidth": 0,
+                      "rowHeight": 54
+                    }
+                  },
+                  "hideWidgetFrame": false
+                },
+                {
+                  "id": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1",
+                  "vid": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559",
+                  "type": "mashup",
+                  "views": [
+                    {
+                      "id": "d4492038-e518-4482-95c5-1592a662ba80",
+                      "vid": "d4492038-e518-4482-95c5-1592a662ba8088b2647b-654c-4aa6-a10a-84327b75a05a",
+                      "type": "text",
+                      "views": null,
+                      "layout": {
+                        "col": 1,
+                        "row": 0,
+                        "span": 1,
+                        "colSpan": 4,
+                        "rowSpan": 3,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [
+                        {
+                          "id": "uifWidgetTitleDrillDown",
+                          "type": "drilldown",
+                          "options": {
+                            "widgetId": "d4492038-e518-4482-95c5-1592a662ba8088b2647b-654c-4aa6-a10a-84327b75a05a"
+                          },
+                          "inlineAction": true
+                        }
+                      ],
+                      "options": {
+                        "title": "<New Markdown>",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "data",
+                              "query": "opsb_aws_asgService_number_of_accounts_of_asg",
+                              "params": {
+                                "sys": "${.items[?(@.type=='sys')].timezone}",
+                                "tft": "${.tft}",
+                                "Calendar:end": "${.end}",
+                                "monSvcConfig": "${.items[?(@.type=='monSvcConfig')].id}",
+                                "monSvcASGTags": "${.items[?(@.type=='monSvcASGTags')].id}",
+                                "Calendar:start": "${.start}",
+                                "monSvcAwsRegion": "${.items[?(@.type=='monSvcAwsRegion')].id}",
+                                "monSvcAwsAccount": "${.items[?(@.type=='monSvcAwsAccount')].id}"
+                              },
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "text": "<div style=\"display: flex; flex-direction: column;align-items: center; justify-content: center; margin-top:-10px\">\n<div style=\"font-size: 0.9rem; color: grey\">\n<em>Total</em>\n</div>\n<br>\n<div style=\"font-size: 2.5rem; margin-top:-10px\">\n{{account_count}}\n</div>\n</div>",
+                          "styleTables": "true"
+                        },
+                        "context": {
+                          "mapped": {
+                            "types": []
+                          },
+                          "incoming": {
+                            "types": [
+                              "monSvcConfig",
+                              "monSvcAwsAccount",
+                              "monSvcAwsRegion",
+                              "monSvcASGTags"
+                            ]
+                          }
+                        },
+                        "timeSelector": "timeRange"
+                      },
+                      "configTemplate": {
+                        "icon": "qtm-icon-markdown",
+                        "label": "widget.type.text",
+                        "order": 2,
+                        "groupId": "__uisPaletteGroupGeneral",
+                        "version": 1,
+                        "iconColor": "#0073E7",
+                        "skipWidgetCreation": false
+                      },
+                      "hideWidgetFrame": false
+                    },
+                    {
+                      "id": "ec01a2fe-22c1-4d91-a705-e0a28f021e2d",
+                      "vid": "ec01a2fe-22c1-4d91-a705-e0a28f021e2d0df6fa5a-29e3-4329-a6c3-e7f120a50bf5",
+                      "type": "text",
+                      "views": null,
+                      "layout": {
+                        "col": 7,
+                        "row": 0,
+                        "span": 1,
+                        "colSpan": 4,
+                        "rowSpan": 3,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [
+                        {
+                          "id": "uifWidgetTitleDrillDown",
+                          "type": "drilldown",
+                          "options": {
+                            "widgetId": "ec01a2fe-22c1-4d91-a705-e0a28f021e2d0df6fa5a-29e3-4329-a6c3-e7f120a50bf5"
+                          },
+                          "inlineAction": true
+                        }
+                      ],
+                      "options": {
+                        "title": "<New Markdown>",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "data",
+                              "query": "opsb_aws_asgService_instance_trend_of_asg",
+                              "params": {
+                                "sys": "${.items[?(@.type=='sys')].timezone}",
+                                "tft": "${.tft}",
+                                "Calendar:end": "${.end}",
+                                "monSvcConfig": "${.items[?(@.type=='monSvcConfig')].id}",
+                                "monSvcEC2Tags": "${.items[?(@.type=='monSvcEC2Tags')].id}",
+                                "Calendar:start": "${.start}",
+                                "monSvcAwsRegion": "${.items[?(@.type=='monSvcAwsRegion')].id}",
+                                "monSvcAwsAccount": "${.items[?(@.type=='monSvcAwsAccount')].id}"
+                              },
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "text": "<div>\n<div style=\"font-size: 0.9rem; color: grey; margin-top:-10px\">\n<em>Trend</em>\n</div>\n<br>\n<div style=\"font-size: 1rem; display: flex; align-items: center; justify-content: center; margin-top:-10px\">\n {{trend}} \n</div>\n</div>",
+                          "styleTables": "true"
+                        },
+                        "context": {
+                          "mapped": {
+                            "types": []
+                          },
+                          "incoming": {
+                            "types": [
+                              "monSvcConfig",
+                              "monSvcAwsAccount",
+                              "monSvcAwsRegion",
+                              "monSvcEC2Tags"
+                            ]
+                          }
+                        },
+                        "timeSelector": "timeRange"
+                      },
+                      "configTemplate": {
+                        "icon": "qtm-icon-markdown",
+                        "label": "widget.type.text",
+                        "order": 2,
+                        "groupId": "__uisPaletteGroupGeneral",
+                        "version": 1,
+                        "iconColor": "#0073E7",
+                        "skipWidgetCreation": false
+                      },
+                      "hideWidgetFrame": false
+                    },
+                    {
+                      "id": "1b6b6658-aa21-4aac-b7ca-732b0f84324a",
+                      "vid": "1b6b6658-aa21-4aac-b7ca-732b0f84324a3b56286c-f73b-46c4-bb80-17ebeedad6ff",
+                      "type": "echart",
+                      "views": null,
+                      "layout": {
+                        "col": 0,
+                        "row": 3,
+                        "span": 1,
+                        "colSpan": 12,
+                        "rowSpan": 5,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [],
+                      "options": {
+                        "title": "widget.edit.newChartWidget.title",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "DataCollector-Chart",
+                              "query": "",
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "graph": [
+                            {
+                              "data": "DataCollector-Chart",
+                              "name": "",
+                              "type": "line",
+                              "unit": null,
+                              "value": "value",
+                              "category": "",
+                              "timestamp": "timestamp",
+                              "displayName": "new"
+                            }
+                          ]
+                        },
+                        "showHelpMessageForAddWidget": true
+                      },
+                      "hideWidgetFrame": false
+                    }
+                  ],
+                  "layout": {
+                    "span": 1,
+                    "colSpan": 4,
+                    "rowSpan": 8,
+                    "resizable": true,
+                    "autoPositioning": false
+                  },
+                  "actions": [
+                    {
+                      "id": "exportToCSV",
+                      "type": "exportToCSV",
+                      "options": {
+                        "icon": "qtm-icon-document-csv",
+                        "name": "widget.action.exportToCSV",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "refreshWidget",
+                      "type": "refreshWidget",
+                      "options": {
+                        "icon": "qtm-icon-refresh",
+                        "name": "widget.action.refresh",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "edit",
+                      "type": "edit",
+                      "options": {
+                        "icon": "qtm-icon-edit",
+                        "name": "widget.action.edit",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "chooseColumns",
+                      "type": "chooseColumns",
+                      "options": {
+                        "icon": "qtm-icon-column",
+                        "name": "widget.action.chooseColumns",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "duplicateWidget",
+                      "type": "duplicateWidget",
+                      "options": {
+                        "icon": "qtm-icon-duplicate",
+                        "name": "widget.action.duplicate",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "fullscreen",
+                      "type": "fullscreen",
+                      "options": {
+                        "icon": "qtm-icon-fullscreen",
+                        "name": "widget.action.fullscreen",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "removeWidget",
+                      "type": "removeWidget",
+                      "options": {
+                        "icon": "qtm-icon-close",
+                        "name": "widget.action.remove",
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559"
+                      }
+                    },
+                    {
+                      "id": "addWidget",
+                      "type": "addWidget",
+                      "options": {
+                        "icon": "add",
+                        "mode": "inline",
+                        "name": {
+                          "l10n": "widget.action.addWidget",
+                          "default": "Add Widget"
+                        },
+                        "size": "S",
+                        "config": {
+                          "cancelButtonTitle": {
+                            "l10n": "sidepanel.title.cancel",
+                            "default": "CANCEL"
+                          }
+                        },
+                        "widget": {
+                          "id": "uif_add_widget_panel"
+                        },
+                        "widgetId": "a8c3d3e7-2fe6-4187-aaf3-0560372afca1b9c341fe-2881-4982-bb93-c6ca04c95559",
+                        "directApplyMode": true
+                      },
+                      "inlineAction": true
+                    }
+                  ],
+                  "options": {
+                    "title": "Accounts",
+                    "scroll": "none",
+                    "placeholder": "uif.data.viz.group.widget.placeholder",
+                    "hideWidgetFrame": false,
+                    "dashboardOptions": {
+                      "columns": 12,
+                      "minWidth": 0,
+                      "rowHeight": 61
+                    }
+                  },
+                  "hideWidgetFrame": false
+                },
+                {
+                  "id": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7",
+                  "vid": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877",
+                  "type": "mashup",
+                  "views": [
+                    {
+                      "id": "468c2e59-8fe6-4fa4-80f2-d86cc90e5976",
+                      "vid": "468c2e59-8fe6-4fa4-80f2-d86cc90e5976fecb2b79-ed70-4e97-bb32-3ca99b5c2f22",
+                      "type": "text",
+                      "views": null,
+                      "layout": {
+                        "col": 1,
+                        "row": 0,
+                        "span": 1,
+                        "colSpan": 4,
+                        "rowSpan": 3,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [
+                        {
+                          "id": "uifWidgetTitleDrillDown",
+                          "type": "drilldown",
+                          "options": {
+                            "widgetId": "468c2e59-8fe6-4fa4-80f2-d86cc90e5976fecb2b79-ed70-4e97-bb32-3ca99b5c2f22"
+                          },
+                          "inlineAction": true
+                        }
+                      ],
+                      "options": {
+                        "title": "<New Markdown>",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "data",
+                              "query": "opsb_aws_asgService_number_of_regions_of_asg",
+                              "params": {
+                                "sys": "${.items[?(@.type=='sys')].timezone}",
+                                "tft": "${.tft}",
+                                "Calendar:end": "${.end}",
+                                "monSvcConfig": "${.items[?(@.type=='monSvcConfig')].id}",
+                                "monSvcASGTags": "${.items[?(@.type=='monSvcASGTags')].id}",
+                                "Calendar:start": "${.start}",
+                                "monSvcAwsRegion": "${.items[?(@.type=='monSvcAwsRegion')].id}",
+                                "monSvcAwsAccount": "${.items[?(@.type=='monSvcAwsAccount')].id}"
+                              },
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "text": "<div style=\"display: flex; flex-direction: column;align-items: center; justify-content: center; margin-top:-10px\">\n<div style=\"font-size: 0.9rem; color: grey\">\n<em>Total</em>\n</div>\n<br>\n<div style=\"font-size: 2.5rem; margin-top:-10px\">\n{{region_account}}\n</div>\n</div>",
+                          "styleTables": "true"
+                        },
+                        "context": {
+                          "mapped": {
+                            "types": []
+                          },
+                          "incoming": {
+                            "types": [
+                              "monSvcConfig",
+                              "monSvcAwsAccount",
+                              "monSvcAwsRegion",
+                              "monSvcASGTags"
+                            ]
+                          }
+                        },
+                        "timeSelector": "timeRange"
+                      },
+                      "configTemplate": {
+                        "icon": "qtm-icon-markdown",
+                        "label": "widget.type.text",
+                        "order": 2,
+                        "groupId": "__uisPaletteGroupGeneral",
+                        "version": 1,
+                        "iconColor": "#0073E7",
+                        "skipWidgetCreation": false
+                      },
+                      "hideWidgetFrame": false
+                    },
+                    {
+                      "id": "a06a1454-00ff-41d1-859d-c201bbf0d5b5",
+                      "vid": "a06a1454-00ff-41d1-859d-c201bbf0d5b57851c20f-1109-4587-bac4-fa4cd63f8bfc",
+                      "type": "text",
+                      "views": null,
+                      "layout": {
+                        "col": 7,
+                        "row": 0,
+                        "span": 1,
+                        "colSpan": 4,
+                        "rowSpan": 3,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [
+                        {
+                          "id": "uifWidgetTitleDrillDown",
+                          "type": "drilldown",
+                          "options": {
+                            "widgetId": "a06a1454-00ff-41d1-859d-c201bbf0d5b57851c20f-1109-4587-bac4-fa4cd63f8bfc"
+                          },
+                          "inlineAction": true
+                        }
+                      ],
+                      "options": {
+                        "title": "<New Markdown>",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "data",
+                              "query": "opsb_aws_asgService_instance_region_trend_of_asg",
+                              "params": {
+                                "sys": "${.items[?(@.type=='sys')].timezone}",
+                                "tft": "${.tft}",
+                                "Calendar:end": "${.end}",
+                                "monSvcConfig": "${.items[?(@.type=='monSvcConfig')].id}",
+                                "monSvcEC2Tags": "${.items[?(@.type=='monSvcEC2Tags')].id}",
+                                "Calendar:start": "${.start}",
+                                "monSvcAwsRegion": "${.items[?(@.type=='monSvcAwsRegion')].id}",
+                                "monSvcAwsAccount": "${.items[?(@.type=='monSvcAwsAccount')].id}"
+                              },
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "text": "<div>\n<div style=\"font-size: 0.9rem; color: grey; margin-top:-10px\">\n<em>Trend</em>\n</div>\n<br>\n<div style=\"font-size: 1rem; display: flex; align-items: center; justify-content: center;; margin-top:-10px\">\n {{trend}} \n</div>\n</div>",
+                          "styleTables": "true"
+                        },
+                        "context": {
+                          "mapped": {
+                            "types": []
+                          },
+                          "incoming": {
+                            "types": [
+                              "monSvcConfig",
+                              "monSvcAwsAccount",
+                              "monSvcAwsRegion",
+                              "monSvcEC2Tags"
+                            ]
+                          }
+                        },
+                        "timeSelector": "timeRange"
+                      },
+                      "configTemplate": {
+                        "icon": "qtm-icon-markdown",
+                        "label": "widget.type.text",
+                        "order": 2,
+                        "groupId": "__uisPaletteGroupGeneral",
+                        "version": 1,
+                        "iconColor": "#0073E7",
+                        "skipWidgetCreation": false
+                      },
+                      "hideWidgetFrame": false
+                    },
+                    {
+                      "id": "15806126-ff89-47eb-908d-441ea013199c",
+                      "vid": "15806126-ff89-47eb-908d-441ea013199cdf72d0d8-a776-4639-b98c-f4d15bbd68d4",
+                      "type": "echart",
+                      "views": null,
+                      "layout": {
+                        "col": 0,
+                        "row": 3,
+                        "span": 1,
+                        "colSpan": 12,
+                        "rowSpan": 5,
+                        "resizable": true,
+                        "autoPositioning": false
+                      },
+                      "actions": [],
+                      "options": {
+                        "title": "widget.edit.newChartWidget.title",
+                        "config": {
+                          "data": [
+                            {
+                              "name": "DataCollector-Chart",
+                              "query": "",
+                              "datasource": "dataCollector"
+                            }
+                          ],
+                          "graph": [
+                            {
+                              "data": "DataCollector-Chart",
+                              "name": "",
+                              "type": "line",
+                              "unit": null,
+                              "value": "value",
+                              "category": "",
+                              "timestamp": "timestamp",
+                              "displayName": "new"
+                            }
+                          ]
+                        },
+                        "showHelpMessageForAddWidget": true
+                      },
+                      "hideWidgetFrame": false
+                    }
+                  ],
+                  "layout": {
+                    "span": 1,
+                    "colSpan": 4,
+                    "rowSpan": 8,
+                    "resizable": true,
+                    "autoPositioning": false
+                  },
+                  "actions": [
+                    {
+                      "id": "exportToCSV",
+                      "type": "exportToCSV",
+                      "options": {
+                        "icon": "qtm-icon-document-csv",
+                        "name": "widget.action.exportToCSV",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "refreshWidget",
+                      "type": "refreshWidget",
+                      "options": {
+                        "icon": "qtm-icon-refresh",
+                        "name": "widget.action.refresh",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "edit",
+                      "type": "edit",
+                      "options": {
+                        "icon": "qtm-icon-edit",
+                        "name": "widget.action.edit",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "chooseColumns",
+                      "type": "chooseColumns",
+                      "options": {
+                        "icon": "qtm-icon-column",
+                        "name": "widget.action.chooseColumns",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "duplicateWidget",
+                      "type": "duplicateWidget",
+                      "options": {
+                        "icon": "qtm-icon-duplicate",
+                        "name": "widget.action.duplicate",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "fullscreen",
+                      "type": "fullscreen",
+                      "options": {
+                        "icon": "qtm-icon-fullscreen",
+                        "name": "widget.action.fullscreen",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "removeWidget",
+                      "type": "removeWidget",
+                      "options": {
+                        "icon": "qtm-icon-close",
+                        "name": "widget.action.remove",
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877"
+                      }
+                    },
+                    {
+                      "id": "addWidget",
+                      "type": "addWidget",
+                      "options": {
+                        "icon": "add",
+                        "mode": "inline",
+                        "name": {
+                          "l10n": "widget.action.addWidget",
+                          "default": "Add Widget"
+                        },
+                        "size": "S",
+                        "config": {
+                          "cancelButtonTitle": {
+                            "l10n": "sidepanel.title.cancel",
+                            "default": "CANCEL"
+                          }
+                        },
+                        "widget": {
+                          "id": "uif_add_widget_panel"
+                        },
+                        "widgetId": "1cf3a67f-b553-4a7d-ad92-2310f1deedd7061d3ee5-d377-41d1-aad3-e7f450877877",
+                        "directApplyMode": true
+                      },
+                      "inlineAction": true
+                    }
+                  ],
+                  "options": {
+                    "title": "Region",
+                    "scroll": "none",
+                    "placeholder": "uif.data.viz.group.widget.placeholder",
+                    "hideWidgetFrame": false,
+                    "dashboardOptions": {
+                      "columns": 12,
+                      "minWidth": 0,
+                      "rowHeight": 61
+                    }
+                  },
+                  "hideWidgetFrame": false
+                }
+              ],
+              "layout": {
+                "col": 0,
+                "row": 0,
+                "span": 1,
+                "colSpan": 12,
+                "rowSpan": 12,
+                "resizable": true,
+                "autoPositioning": false
+              },
+              "actions": [
+                {
+                  "id": "exportToCSV",
+                  "type": "exportToCSV",
+                  "options": {
+                    "icon": "qtm-icon-document-csv",
+                    "name": "widget.action.exportToCSV",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "refreshWidget",
+                  "type": "refreshWidget",
+                  "options": {
+                    "icon": "qtm-icon-refresh",
+                    "name": "widget.action.refresh",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "edit",
+                  "type": "edit",
+                  "options": {
+                    "icon": "qtm-icon-edit",
+                    "name": "widget.action.edit",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "chooseColumns",
+                  "type": "chooseColumns",
+                  "options": {
+                    "icon": "qtm-icon-column",
+                    "name": "widget.action.chooseColumns",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "duplicateWidget",
+                  "type": "duplicateWidget",
+                  "options": {
+                    "icon": "qtm-icon-duplicate",
+                    "name": "widget.action.duplicate",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "fullscreen",
+                  "type": "fullscreen",
+                  "options": {
+                    "icon": "qtm-icon-fullscreen",
+                    "name": "widget.action.fullscreen",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "removeWidget",
+                  "type": "removeWidget",
+                  "options": {
+                    "icon": "qtm-icon-close",
+                    "name": "widget.action.remove",
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358"
+                  }
+                },
+                {
+                  "id": "addWidget",
+                  "type": "addWidget",
+                  "options": {
+                    "icon": "add",
+                    "mode": "inline",
+                    "name": {
+                      "l10n": "widget.action.addWidget",
+                      "default": "Add Widget"
+                    },
+                    "size": "S",
+                    "config": {
+                      "cancelButtonTitle": {
+                        "l10n": "sidepanel.title.cancel",
+                        "default": "CANCEL"
+                      }
+                    },
+                    "widget": {
+                      "id": "uif_add_widget_panel"
+                    },
+                    "widgetId": "ddced958-f6f3-450a-a85d-a990d61213c70e5f74ec-fa2a-4330-9c38-2eb75131e358",
+                    "directApplyMode": true
+                  },
+                  "inlineAction": true
+                }
+              ],
+              "options": {
+                "title": "Overview",
+                "scroll": "none",
+                "placeholder": "uif.data.viz.group.widget.placeholder",
+                "hideWidgetFrame": false,
+                "dashboardOptions": {
+                  "columns": 12,
+                  "minWidth": 0,
+                  "rowHeight": 68
+                }
+              },
+              "hideWidgetFrame": false
+            }
+          ],
+          "layout": {
+            "span": 1
+          },
+          "actions": [
+            {
+              "id": "exportToCSV",
+              "type": "exportToCSV",
+              "options": {
+                "icon": "qtm-icon-document-csv",
+                "name": "widget.action.exportToCSV",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "refreshWidget",
+              "type": "refreshWidget",
+              "options": {
+                "icon": "qtm-icon-refresh",
+                "name": "widget.action.refresh",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "edit",
+              "type": "edit",
+              "options": {
+                "icon": "qtm-icon-edit",
+                "name": "widget.action.edit",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "chooseColumns",
+              "type": "chooseColumns",
+              "options": {
+                "icon": "qtm-icon-column",
+                "name": "widget.action.chooseColumns",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "duplicateWidget",
+              "type": "duplicateWidget",
+              "options": {
+                "icon": "qtm-icon-duplicate",
+                "name": "widget.action.duplicate",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "fullscreen",
+              "type": "fullscreen",
+              "options": {
+                "icon": "qtm-icon-fullscreen",
+                "name": "widget.action.fullscreen",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "removeWidget",
+              "type": "removeWidget",
+              "options": {
+                "icon": "qtm-icon-close",
+                "name": "widget.action.remove",
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c"
+              }
+            },
+            {
+              "id": "addWidget",
+              "type": "addWidget",
+              "options": {
+                "icon": "add",
+                "mode": "inline",
+                "name": {
+                  "l10n": "widget.action.addWidget",
+                  "default": "Add Widget"
+                },
+                "size": "S",
+                "config": {
+                  "cancelButtonTitle": {
+                    "l10n": "sidepanel.title.cancel",
+                    "default": "CANCEL"
+                  }
+                },
+                "widget": {
+                  "id": "uif_add_widget_panel"
+                },
+                "widgetId": "mashup65142cb6-e3ff-4df3-bf40-797da853d08c",
+                "directApplyMode": true
+              },
+              "inlineAction": true
+            }
+          ],
+          "options": {
+            "dashboardOptions": {
+              "columns": 12,
+              "minWidth": 50,
+              "rowHeight": 50
+            }
+          }
+        },
+        "icon": "qtm-font-icon qtm-icon-dashboard",
+        "title": "<New>-definition",
+        "actions": [],
+        "description": "",
+        "hideTimeRangeSelector": false
+      }
+    ],
+    "dataCollectors": [
+      {
+        "name": "opsb_aws_asgService_instance_and_type_count_of_asg",
+        "connection": null,
+        "type": null,
+        "lastExecution": "2024-06-05T08:11:37.683Z",
+        "data": {
+          "resultFormat": "unchanged",
+          "tags": [],
+          "dims": [],
+          "queryText": "Select count(distinct(auto_scaling_group_name)) as id_cnt, count(distinct(instance_type)) as type_cnt\r\n  FROM cloud_aws_asg caa\r\n  WHERE timestamp_utc_s > (EXTRACT(epoch FROM ${${Calendar:start}}::TIMESTAMP at timezone ${${sys.timezone}}))\r\nAND timestamp_utc_s < (EXTRACT(epoch FROM ${${Calendar:end}}::TIMESTAMP at timezone ${${sys.timezone}}))\r\n  AND ${collection_policy_name IN (${monSvcConfig})}\r\n  AND ${account_id IN (${monSvcAwsAccount})}\r\n  AND ${region IN (${monSvcAwsRegion})}\r\n  AND ${tags LIKE '%' || ((${monSvcEC2Tags})) || '%'}\r\n ",
+          "availableColumns": [
+            "id_cnt",
+            "type_cnt"
+          ],
+          "sampleResultSet": [
+            {
+              "id_cnt": 0,
+              "type_cnt": 0
+            }
+          ],
+          "sampleQueryResult": {
+            "id_cnt": 0,
+            "type_cnt": 0
+          },
+          "metaData": {
+            "valueColumns": [],
+            "timeColumns": [],
+            "dimensions": []
+          },
+          "tableName": "",
+          "displayLabel": "opsb_aws_asgService_instance_and_type_count_of_asg",
+          "description": ""
+        }
+      },
+      {
+        "name": "opsb_aws_asgService_instance_trend_of_asg",
+        "connection": null,
+        "type": null,
+        "lastExecution": "2024-06-05T08:28:38.423Z",
+        "data": {
+          "resultFormat": "unchanged",
+          "tags": [],
+          "dims": [],
+          "queryText": "With StartOfPeriod AS (\r\nSELECT \r\n    min(timestamp_utc_s) as timestamp, count(DISTINCT auto_scaling_group_name) AS instance_count,\r\n    account_id\r\nFROM cloud_aws_asg caa \r\nWHERE \r\n    timestamp_utc_s > (EXTRACT(epoch FROM ${${Calendar:start}}::TIMESTAMP at timezone ${${sys.timezone}}))\r\n    AND timestamp_utc_s < (EXTRACT(epoch FROM ${${Calendar:start}}::TIMESTAMP at timezone ${${sys.timezone}})) + 172000\r\n    AND ${collection_policy_name IN (${monSvcConfig})}\r\n    AND ${account_id IN (${monSvcAwsAccount})}\r\n    AND ${region IN (${monSvcAwsRegion})}\r\n    AND ${tags LIKE '%' || ((${monSvcEC2Tags})) || '%'}\r\nGROUP BY account_id\r\n),\r\nEndOfPeriod AS (\r\nSELECT \r\n    max(timestamp_utc_s) as timestamp, count(DISTINCT auto_scaling_group_name) AS instance_count,\r\n    account_id\r\nFROM cloud_aws_asg caa \r\nWHERE \r\n    timestamp_utc_s > (EXTRACT(epoch FROM ${${Calendar:end}}::TIMESTAMP at timezone ${${sys.timezone}})) - 172000\r\n    AND timestamp_utc_s < (EXTRACT(epoch FROM ${${Calendar:end}}::TIMESTAMP at timezone ${${sys.timezone}})) \r\n    AND ${collection_policy_name IN (${monSvcConfig})}\r\n    AND ${account_id IN (${monSvcAwsAccount})}\r\n    AND ${region IN (${monSvcAwsRegion})}\r\n    AND ${tags LIKE '%' || ((${monSvcEC2Tags})) || '%'}\r\nGROUP BY account_id\r\n),\r\nDelta AS (\r\nSELECT account_id, timestamp, instance_count, LAG(instance_count, 1, 0) OVER (PARTITION BY account_id ORDER BY timestamp) as previous_count,\r\n       instance_count-LAG(instance_count, 1, 0) OVER (PARTITION BY account_id ORDER BY timestamp) AS change\r\nFROM (SELECT * from StartOfPeriod\r\nUNION\r\nSELECT * from EndOfPeriod\r\n) as tab\r\norder by instance_count-LAG(instance_count, 1, 0) OVER (PARTITION BY account_id ORDER BY timestamp) desc\r\n)\r\nSELECT \r\nCASE \r\n  WHEN change > 0 THEN 'Highest increase in instances in ' || to_char(account_id) || ' by ' || to_char(change) || ', from ' || to_char(previous_count) || ' to ' || to_char(instance_count)\r\n  ELSE 'No significant increase in instances in any account'\r\n  END as trend\r\nFROM Delta\r\nLIMIT 1",
+          "availableColumns": [
+            "trend"
+          ],
+          "sampleResultSet": [
+            {
+              "trend": "Highest increase in instances in 914271771427 by 1, from 0 to 1"
+            }
+          ],
+          "sampleQueryResult": {
+            "trend": "Highest increase in instances in 914271771427 by 1, from 0 to 1"
+          },
+          "metaData": {
+            "valueColumns": [],
+            "timeColumns": [],
+            "dimensions": []
+          },
+          "tableName": "",
+          "displayLabel": "opsb_aws_asgService_instance_trend_of_asg",
+          "description": "172000 <-- 3600"
+        }
+      },
+      {
+        "name": "opsb_aws_asgService_instance_region_trend_of_asg",
+        "connection": null,
+        "type": null,
+        "lastExecution": "2024-06-05T08:34:41.515Z",
+        "data": {
+          "resultFormat": "unchanged",
+          "tags": [],
+          "dims": [],
+          "queryText": "With StartOfPeriod AS (\r\nSELECT \r\n    min(timestamp_utc_s) as timestamp, count(DISTINCT auto_scaling_group_name) AS instance_count,\r\n    region\r\nFROM cloud_aws_asg caa \r\nWHERE \r\n    timestamp_utc_s > (EXTRACT(epoch FROM ${${Calendar:start}}::TIMESTAMP at timezone ${${sys.timezone}}))\r\n    AND timestamp_utc_s < (EXTRACT(epoch FROM ${${Calendar:start}}::TIMESTAMP at timezone ${${sys.timezone}})) + 172000\r\n    AND ${collection_policy_name IN (${monSvcConfig})}\r\n    AND ${account_id IN (${monSvcAwsAccount})}\r\n    AND ${region IN (${monSvcAwsRegion})}\r\n    AND ${tags LIKE '%' || ((${monSvcEC2Tags})) || '%'}\r\nGROUP BY region\r\n),\r\nEndOfPeriod AS (\r\nSELECT \r\n    max(timestamp_utc_s) as timestamp, count(DISTINCT auto_scaling_group_name) AS instance_count,\r\n    region\r\nFROM cloud_aws_asg cass \r\nWHERE \r\n    timestamp_utc_s > (EXTRACT(epoch FROM ${${Calendar:end}}::TIMESTAMP at timezone ${${sys.timezone}})) - 172000\r\n    AND timestamp_utc_s < (EXTRACT(epoch FROM ${${Calendar:end}}::TIMESTAMP at timezone ${${sys.timezone}})) \r\n    AND ${collection_policy_name IN (${monSvcConfig})}\r\n    AND ${account_id IN (${monSvcAwsAccount})}\r\n    AND ${region IN (${monSvcAwsRegion})}\r\n    AND ${tags LIKE '%' || ((${monSvcEC2Tags})) || '%'}\r\nGROUP BY region\r\n),\r\nDelta AS (\r\nSELECT region, timestamp, instance_count, LAG(instance_count, 1, 0) OVER (PARTITION BY region ORDER BY timestamp) as previous_count,\r\n       instance_count-LAG(instance_count, 1, 0) OVER (PARTITION BY region ORDER BY timestamp) AS change\r\nFROM (SELECT * from StartOfPeriod\r\nUNION\r\nSELECT * from EndOfPeriod\r\n) as tab\r\norder by instance_count-LAG(instance_count, 1, 0) OVER (PARTITION BY region ORDER BY timestamp) desc\r\n)\r\nSELECT \r\nCASE \r\n  WHEN change > 0 THEN 'Highest increase in instances in ' || to_char(region) || ' by ' || to_char(change) || ', from ' || to_char(previous_count) || ' to ' || to_char(instance_count)\r\n  ELSE 'No significant increase in instances in any region'\r\n  END as trend\r\nFROM Delta\r\nLIMIT 1",
+          "availableColumns": [
+            "trend"
+          ],
+          "sampleResultSet": [
+            {
+              "trend": "Highest increase in instances in us-east-1 by 2, from 0 to 2"
+            }
+          ],
+          "sampleQueryResult": {
+            "trend": "Highest increase in instances in us-east-1 by 2, from 0 to 2"
+          },
+          "metaData": {
+            "valueColumns": [],
+            "timeColumns": [],
+            "dimensions": []
+          },
+          "tableName": "",
+          "displayLabel": "opsb_aws_asgService_instance_region_trend_of_asg",
+          "description": ""
+        }
+      }
+    ]
+  }
+}
