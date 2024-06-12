@@ -5,6 +5,7 @@ void insertionsort(vector<int> nums);
 void selectionsort(vector<int> nums);
 void mergesorting(vector<int> nums);
 void bubblesort(vector<int> nums);
+void quicksort(vector<int> nums);
 void print(vector<int> &nums);
 
 
@@ -138,4 +139,12 @@ void mergesorting(vector<int> nums){
     for(auto xt:nums)
         cout<<xt<<" ";
     cout<<endl;
+}
+
+
+
+// ----------Quick Sort----------
+
+void quicksort(vector<int> nums){
+
 }

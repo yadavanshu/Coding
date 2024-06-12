@@ -14,7 +14,7 @@ int secondLargest(vector<int> &nums){
 }
 
 int main(){
-    vector<int> nums = {12,2,45,7,9,98,1,10,32,91};
+    vector<int> nums = {12,2,45,7,9,98,1,10,32,92};
     cout<<"Second Largest: "<<secondLargest(nums);
     return 0;
 }
