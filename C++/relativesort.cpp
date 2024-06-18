@@ -16,9 +16,13 @@ public:
                 return num1<num2;
             return mp[num1]<mp[num2];
         };
-
-
         sort(begin(arr1),end(arr1),lambda);
+
+        // sort(begin(arr1),end(arr1),[&](int num1,int num2){
+        // if (mp[num1] == mp[num2])
+        //     return num1 < num2;
+        // return mp[num1] < mp[num2];
+        // });
 
         return arr1;
     }
