@@ -1,0 +1,1 @@
+{"name":"Local: boquets","url":"c:\\Users\\ayadav11\\Documents\\Coding\\C++\\Binary_Search\\boquets.cpp","tests":[{"id":1718874304613,"input":"8\n7 7 7 7 13 12 11 7\n2 3","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ayadav11\\Documents\\Coding\\C++\\Binary_Search\\boquets.cpp","group":"local","local":true}

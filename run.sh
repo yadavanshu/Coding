@@ -9,7 +9,7 @@ COMMIT_MSG="Repo Update"
 git add .
 git commit -m "$COMMIT_MSG"
 git remote add origin "$REPO_LINK"
-git push -u origin "$BRANCH"
+git push
 
 echo "Git Update Done"
 
