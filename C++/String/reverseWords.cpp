@@ -5,9 +5,9 @@ void reverseWord1(string &str)
 {
     int start = 0;
     int n = str.size();
-    while(str[n-1]==' ')
+    while (str[n - 1] == ' ')
         n--;
-    while(str[start]==' ')
+    while (str[start] == ' ')
         start++;
     for (int end = start; end < n; end++)
     {
@@ -29,7 +29,8 @@ void reverseWord2(string &str)
     {
         if (str[i] == ' ')
         {
-            if(word.size()>=1){
+            if (word.size() >= 1)
+            {
                 words.push(word);
                 word = "";
             }
@@ -39,7 +40,7 @@ void reverseWord2(string &str)
             word += str[i];
         }
     }
-    
+
     words.push(word);
     str = "";
     while (!words.empty())
@@ -49,7 +50,6 @@ void reverseWord2(string &str)
             str += " ";
         words.pop();
     }
-
 }
 void reverseWord3(string &str)
 {
@@ -63,25 +63,28 @@ void reverseWord3(string &str)
     str = ans.substr(0, ans.size() - 1);
 }
 
-void reverseWord4(string &str){
+void reverseWord4(string &str)
+{
     int n = str.size();
     int start = 0, end = 0;
+    int i = 0;
     reverse(str.begin(), str.end());
+    while (i < n)
+    {
+        while (i < n && str[i] != ' ')
+            str[end++] = str[i++];
 
-    for (int i = 0; i < n;i++){
-        if(str[i]!=' '){
-            end++;
-        }
-        if(str[i]==' '){
+        if (start < end)
+        {
             reverse(str.begin() + start, str.begin() + end);
+            str[end] = ' ';
+            end++;
             start = end;
         }
+        i++;
     }
+    str=str.substr(0,end-1);
 }
-
-
-
-
 
 int main()
 {
@@ -90,7 +93,6 @@ int main()
 
     reverseWord4(str);
     cout << str;
-    
 
     return 0;
 }
