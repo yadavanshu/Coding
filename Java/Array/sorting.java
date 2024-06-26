@@ -1,4 +1,3 @@
-import java.util.*;
 public class sorting {
 
     static void swap(int arr[], int a, int b){
