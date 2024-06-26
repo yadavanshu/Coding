@@ -27,27 +27,27 @@ void reverseWord2(string &str)
     string word = "";
     for (int i = 0; i < str.size(); i++)
     {
-        if (str[i] == ' ')
+        if (str[i] == ' ' && word.size())
         {
-            if (word.size() >= 1)
-            {
                 words.push(word);
                 word = "";
-            }
         }
-        else
+        else if(str[i]!=' ')
         {
             word += str[i];
         }
     }
-
-    words.push(word);
     str = "";
+    if(word.size())
+        str = word;
+    else{
+        str = words.top();
+        words.pop();
+    }
+
     while (!words.empty())
     {
-        str += words.top();
-        if (!words.empty())
-            str += " ";
+        str += " "+ words.top();
         words.pop();
     }
 }
@@ -91,7 +91,7 @@ int main()
     string str;
     getline(cin, str);
 
-    reverseWord4(str);
+    reverseWord2(str);
     cout << str;
 
     return 0;
