@@ -7,5 +7,12 @@ int main(){
     cout<<endl;
     for(auto xt:nums)
         cout<<xt<<" ";
+    string str = "123456f9898";
+    stringstream ss(str);
+    int num;
+    char x;
+    int xt;
+    ss >> num >> x>> xt;
+    cout << num << " " << x<< " "<<xt;
     return 0;
 }
