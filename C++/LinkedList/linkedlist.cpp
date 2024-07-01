@@ -54,12 +54,31 @@ public:
         node->next = node->next->next;
         delete (nextNode);
     }
+    int lengthLinkedlist(Node *head){
+        int count = 0;
+        while(head!=NULL){
+            count++;
+             head = head->next;
+        }
+        return count;
+    }
+    int search(Node *head, int x){
+        int idx = 0;
+        while(head!=NULL){
+            if(head->data == x){
+                return idx;
+            }
+            idx++;
+            head = head->next;
+        }
+        return -1;
+    }
 };
 
 int main()
 {
         int n;
-        cin >> n;
+        cin >> n; 
         Solution obj;
         Node *head = NULL;
         for (int i = 0; i < n; ++i)
@@ -74,5 +93,10 @@ int main()
                 head = obj.insertAtBegining(head, data);
         }
         obj.printList(head);
-    return 0;
+        cout<<obj.lengthLinkedlist(head);
+        int x;
+        cin >> x;
+
+        cout<<endl<<"Found: "<<obj.search(head, x);
+        return 0;
 }
