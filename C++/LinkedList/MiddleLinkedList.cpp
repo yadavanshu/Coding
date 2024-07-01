@@ -10,6 +10,17 @@ struct Node {
 class LinkedList {
 private:
     Node* head;
+    void helper(Node *curr,Node *next=NULL,Node *prev=NULL){
+        if(curr==NULL){
+            head = prev;
+            return;
+        }
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+        helper(curr,next,prev);
+    }
 
 public:
     LinkedList() : head(nullptr) {}
@@ -60,12 +71,10 @@ public:
         head = prev;
     }
 
-    void recursiveReverseLinkedList(Node *curr){
-        if(curr==NULL)
-            return;
-        recursiveReverseLinkedList(curr);
-        }
 
+        void recursiveReverseLinkedList(){
+            helper(head);
+        }
 };
 
 int main() {
@@ -82,6 +91,9 @@ int main() {
     cout<<list.middleNode()<<endl;
     cout << "ReverseList: ";
     list.reverseLinkedList();
+    list.display();
+    cout << "RecursiveReverseList: ";
+    list.recursiveReverseLinkedList();
     list.display();
     return 0;
 }

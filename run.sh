@@ -2,7 +2,10 @@
 
 REPO_LINK="https://github.com/yadavanshu/Coding.git"
 BRANCH="master"
-COMMIT_MSG="Repo Update"
+
+echo "Commit Message: "
+
+read COMMIT_MSG
 
 
 # git init
