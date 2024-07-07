@@ -6,8 +6,7 @@ struct Node
     int data;
     struct Node *next;
 
-    Node(int x)
-    {
+    Node(int x){
         data = x;
         next = NULL;
     }
@@ -58,7 +57,7 @@ public:
         int count = 0;
         while(head!=NULL){
             count++;
-             head = head->next;
+            head = head->next;
         }
         return count;
     }
@@ -72,6 +71,19 @@ public:
             head = head->next;
         }
         return -1;
+    }
+    void reverseLinkedList(Node *head)
+    {
+        Node *curr = head;
+        Node *prev = NULL, *next = NULL;
+        while (curr != NULL)
+        {
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 };
 

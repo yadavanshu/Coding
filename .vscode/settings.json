@@ -92,5 +92,5 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
-    "codium.codeCompletion.enable": false
+    "codium.codeCompletion.enable": true
 }
