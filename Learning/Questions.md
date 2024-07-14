@@ -6,6 +6,7 @@
 - Rotate Array
 - Increasing Triplets
 - Kth Missing Positive Number
+- reverse Array
 
 ## Binary Search
 - First and Last Occurrence
