@@ -29,7 +29,7 @@ void minmaxcharacter(string str){
 
 
 int main(){
-    string str="hello my name is King Ronin Saitma Rengoku Natsu DDDDDDDDDDDDDDDDDDDDDragneelyyyyyyyyyyyyyyyyyyyyyyyyyyyyy Igneel Valorant Omen cccccccccccccchutchutchutchutchutchutcchutchutchutchutchutchutcgik";
+    string str="hello my name is King Ronin Saitma Rengoku Natsu DDDDDDDDDDDDDDDDDDDDDragneelyyyyyyyyyyyyyyyyyyyyyyyyyyyyy Igneel Valorant Omen ccccccccccccccgik";
     minmaxcharacter(str);
     return 0;
 }
