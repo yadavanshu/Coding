@@ -2,7 +2,6 @@
 // output: 2 --> 12, 8759
 //return the count of digits with even length
 
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -16,7 +15,6 @@ int countEvenDigits(vector<int> nums){
     }
     return count;
 }
-
 
 int main(){
     vector<int> nums;

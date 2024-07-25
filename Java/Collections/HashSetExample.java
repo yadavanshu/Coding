@@ -8,7 +8,6 @@ public class HashSetExample {
     {
         HashSet<ArrayList> set = new HashSet<>();
         HashSet<Integer> st = new HashSet<>();
-
         st.add(5);
         st.add(2);
         st.add(1);
@@ -24,9 +23,11 @@ public class HashSetExample {
         list1.add(1);
         list1.add(2);
         list1.add(3);
+
         list2.add(1);
         list2.add(2);
         list2.add(4);
+
         list3.add(1);
         list3.add(2);
         list3.add(5);
