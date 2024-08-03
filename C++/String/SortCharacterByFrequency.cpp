@@ -29,10 +29,9 @@ public:
     {
         map<char, int> mp;
         for_each(str.begin(), str.end(), [&](char ch)
-                 { mp[ch]++; });
+                { mp[ch]++; });
 
-        auto lambda = [&](char c, char s)
-        {
+        auto lambda = [&](char c, char s){
             if(mp[c]==mp[s])
                 return c < s;
             return mp[c] > mp[s] ;
