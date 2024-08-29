@@ -1,0 +1,83 @@
+Game of Nim
+===========
+
+Rules:
+- There are several piles of objects.
+- Players take turns to remove objects from a single pile.
+- On each turn, a player can remove any number of objects from one pile.
+- The player forced to take the last object loses the game.
+
+Example Setup:
+--------------
+Initial piles: 3, 4, 5
+
+Instructions:
+-------------
+1. Enter the index of the pile you want to take objects from.
+2. Enter the number of objects you want to remove from that pile.
+3. The game will continue until all piles are empty.
+4. The player forced to take the last object loses.
+
+Game Example:
+--------------
+Pile 0: 3 objects
+Pile 1: 4 objects
+Pile 2: 5 objects
+
+Player 1's turn:
+Enter pile index (0, 1, or 2): 1
+Enter number of objects to remove: 2
+
+Pile 0: 3 objects
+Pile 1: 2 objects
+Pile 2: 5 objects
+
+AI's turn:
+Pile 0: 3 objects
+Pile 1: 1 object
+Pile 2: 5 objects
+
+
+
+File Compression Tool
+=====================
+
+This tool demonstrates a simple file compression structure.
+
+How to Use:
+-----------
+1. To compress a file, run the tool and provide the filename.
+2. The tool will create a compressed file with the `.comp` extension.
+
+3. To decompress the file, run the tool again and provide the compressed filename.
+4. The tool will create a decompressed file with the `.decomp` extension.
+
+Example Usage:
+--------------
+To compress:
+$ ./file_compression_tool filename.txt
+
+To decompress:
+$ ./file_compression_tool filename.txt.comp
+
+
+Simple File Encryption/Decryption Tool
+========================================
+
+This tool demonstrates basic file encryption and decryption using XOR.
+
+How to Use:
+-----------
+1. To encrypt a file, run the tool and provide the filename and a single character key.
+2. The tool will create an encrypted file with the `.enc` extension.
+
+3. To decrypt the file, run the tool and provide the encrypted filename and the same key used for encryption.
+4. The tool will create a decrypted file with the `.dec` extension.
+
+Example Usage:
+--------------
+To encrypt:
+$ ./file_encryption_tool filename.txt key
+
+To decrypt:
+$ ./file_encryption_tool filename.txt.enc key

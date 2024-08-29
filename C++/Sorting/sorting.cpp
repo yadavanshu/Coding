@@ -11,7 +11,7 @@ void print(vector<int> &nums);
 
 int main(){
     vector<int> nums={45,12,3,1,65,9,10,75,42,23,29,80};
-    cout<<"Before Sorting: ";
+
     print(nums);
     bubblesort(nums);
     selectionsort(nums);
@@ -40,7 +40,7 @@ void bubblesort(vector<int> nums){
         }
         if(!flag) break;
     }
-    cout<<"After Bubble Sort: ";
+
     for(auto xt:nums)
         cout<<xt<<" ";
     cout<<endl;
@@ -59,7 +59,7 @@ void selectionsort(vector<int> nums){
         }
         swap(nums[min_idx],nums[i]);
     }
-    cout<<"After Selection Sort: ";
+
     for(auto xt:nums)
         cout<<xt<<" ";
     cout<<endl;
@@ -81,7 +81,7 @@ void insertionsort(vector<int> nums){
         }
         nums[j+1]=key;
     }
-    cout<<"After Insertion Sort: ";
+
     for(auto xt:nums)
         cout<<xt<<" ";
     cout<<endl;
@@ -134,7 +134,7 @@ void mergesort(vector<int> &nums,int low,int high){
 
 void mergesorting(vector<int> nums){
     mergesort(nums,0,nums.size()-1);
-    cout<<"After Merge Sorting: ";
+
     for(auto xt:nums)
         cout<<xt<<" ";
     cout<<endl;

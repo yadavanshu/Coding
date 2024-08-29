@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./data:/data  # Mount a host directory to the container for file input/output
+    environment:
+      - INPUT_FILE=/data/input-file.txt
+      - OUTPUT_FILE=/data/output-file.gz
+    command: ["java", "-cp", "src", "Main"]

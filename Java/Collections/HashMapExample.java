@@ -1,10 +1,11 @@
 package Java.Collections;
-
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 public class HashMapExample {
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = new HashMap<>();
+        TreeMap<String, Integer> hashMap = new TreeMap<>();
         hashMap.put("One", 1);
         hashMap.put("Two", 2);
         hashMap.put("Three", 3);
@@ -15,7 +16,7 @@ public class HashMapExample {
             System.out.println(key + ": " + hashMap.get(key));
         }
         
-        HashMap<Integer, Integer> hashMap2 = new HashMap<>();
+        LinkedHashMap<Integer, Integer> hashMap2 = new LinkedHashMap<>();
         hashMap2.put(13, 2);
         hashMap2.put(12, 1);
         hashMap2.put(14, 3);

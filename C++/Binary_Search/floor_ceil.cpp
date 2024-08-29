@@ -1,4 +1,3 @@
-//{ Driver Code Starts
 
 #include <bits/stdc++.h>
 
@@ -21,8 +20,6 @@ int main() {
     }
     return 0;
 }
-
-// } Driver Code Ends
 
 int lower_bound(int v[],int n, int x){
     if(v[0]>x) return -1;

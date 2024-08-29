@@ -22,8 +22,8 @@
 - 
 
 ## Binary Search
-- First and Last Occurrence
-- Count Occurrences of a given number in sorted array
+- First and Last Occurrence ✅
+- Count Occurrences of a given number in sorted array ✅
 - Search in Sorted Rotated Array 
 - Search in Sorted Rotated Array II
 - Find Minimum in Rotated Sorted Array
@@ -87,3 +87,4 @@
 ## Leetcode
 - 2418: Sort the People
 - 1748: Sum of Unique Elements
+- 1460: Make Two Arrays Equal by Reversing Subarrays

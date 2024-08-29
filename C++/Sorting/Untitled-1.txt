@@ -1,0 +1,11 @@
+
+
+
+
+cm.exe --user=admin --password=11ISO*help --targetCP=azureService@1.0 --outputFile=Azure_ManagedInstances.json -e page:cV0U7Y -e menu:Av14D6 -l https://skkr2-mst-1220.swinfra.net/ui/
+
+
+cm.exe --user=admin --password=11ISO*help --targetCP=azureService@1.0 --outputFile=Azure_Database.json -e page:Z876jb -e menu:rR2z8r -l https://skkr2-mst-1220.swinfra.net/ui/
+
+
+cm.exe --user=admin --password=11ISO*help --targetCP=azureService@1.0 --outputFile=Azure_VM.json -e page:gzqGLB -e menu:dea79b -l https://skkr2-mst-1220.swinfra.net/ui/

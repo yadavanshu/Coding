@@ -1,15 +1,49 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void partition(vector<int> nums,int pivot){
-    vector<int> ans;
-    for (int i = 0; i < nums.size();i++)
-        if(nums[i]<pivot)
-            ans.push_back(nums[i]);
+int hoarePartition(vector<int> nums,int l,int h){
+    int pivot = nums[l];
+    int i = l - 1, j = h + 1;
+    while(true){
+        do{
+            i++;
+        } while (nums[i] < pivot);
+        do{
+            j--;
+        } while (nums[j] > pivot);
+        if(i>=j)
+            return j;
+        swap(nums[i], nums[j]);
+    }
+}
 
-    
+void quicksortHoare(vector<int> &nums,int l,int h){
+    if(l<h){
+        int p = hoarePartition(nums, l, h);
+        quicksortHoare(nums, l, p);
+        quicksortHoare(nums, p + 1, h);
+    }
+}
 
+int lomutopartition(vector<int> &nums,int l, int h){
+    int pivot = nums[h];
+    int i = l - 1;
+    for (int j = l; j <= h-1;j++){
+        if(nums[j]<pivot){
+            i++;
+            swap(nums[i], nums[j]);
+        }
+    }
+    swap(nums[i + 1], nums[h]);
+    return i+1;
+}
 
+void quicksortLomuto(vector<int> &nums,int l,int h){
+    if(l<h){
+        int p=lomutopartition(nums,l,h);
+        quicksortLomuto(nums, l, p - 1);
+        quicksortLomuto(nums, p + 1, h);
+    }
 }
 
 void print(vector<int> &nums){
@@ -19,8 +53,15 @@ void print(vector<int> &nums){
 }
 int main()
 {
-    vector<int> nums = {45, 12, 3, 1, 65, 9, 10, 75, 42, 23, 29, 80};
-    cout << "Before Sorting: ";
+    vector<int> nums;
+    int n;
+    cin >> n;
+    for (int i = 0;i<n;i++){
+        int t;
+        cin >> t;
+        nums.push_back(t);
+    }
+        quicksortHoare(nums, 0, nums.size() - 1);
     print(nums);
     return 0;
 }

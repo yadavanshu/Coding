@@ -17,8 +17,8 @@ class ArrayListExample {
 
 
         for (int i = 1; i <= n; i++) {
-            int value = sc.nextInt();
-            arr1.add(value);
+            // int value = sc.nextInt();
+            arr1.add(i);
             arr2.add(i);
         }
 
