@@ -2,24 +2,24 @@
 #include <iostream>
 #include <random>
 #include <vector>
-
+using namespace std;
 // Function to generate random names
-std::string generateRandomName()
+string generateRandomName()
 {
-    std::vector<std::string> names = {"John", "Jane", "Alice", "Bob", "Charlie", "Dave", "Eve", "Frank", "Grace", "Heidi"};
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_int_distribution<int> dist(0, names.size() - 1);
-    return names[dist(mt)] + std::to_string(dist(mt, std::uniform_int_distribution<int>(1, 99)));
+    vector<string> names = {"John", "Jane", "Alice", "Bob", "Charlie", "Dave", "Eve", "Frank", "Grace", "Heidi"};
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, names.size() - 1);
+    return names[dist(mt)] + to_string(dist(mt, uniform_int_distribution<int>(1, 99)));
 }
 
 // Function to generate random emails
-std::string generateRandomEmail(const std::string &name)
+string generateRandomEmail(const string &name)
 {
-    std::vector<std::string> domains = {"example.com", "test.com", "mockmail.com"};
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_int_distribution<int> dist(0, domains.size() - 1);
+    vector<string> domains = {"example.com", "test.com", "mockmail.com"};
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, domains.size() - 1);
     return name + "@" + domains[dist(mt)];
 }
 
@@ -28,9 +28,9 @@ int main()
     try
     {
         // Database connection details from environment variables
-        const std::string url = std::getenv("DB_URL");
-        const std::string user = std::getenv("DB_USER");
-        const std::string password = std::getenv("DB_PASSWORD");
+        const string url = getenv("DB_URL");
+        const string user = getenv("DB_USER");
+        const string password = getenv("DB_PASSWORD");
 
         mysqlx::Session session(url, user, password);
 
@@ -41,27 +41,27 @@ int main()
         // Inserting 10 mock records
         for (int i = 0; i < 10; ++i)
         {
-            std::string name = generateRandomName();
-            std::string email = generateRandomEmail(name);
+            string name = generateRandomName();
+            string email = generateRandomEmail(name);
             table.insert("name", "email").values(name, email).execute();
         }
 
-        std::cout << "Mock data generated and inserted successfully." << std::endl;
+        cout << "Mock data generated and inserted successfully." << endl;
         session.close();
     }
     catch (const mysqlx::Error &err)
     {
-        std::cerr << "MySQL Error: " << err.what() << std::endl;
+        cerr << "MySQL Error: " << err.what() << endl;
         return 1;
     }
-    catch (const std::exception &ex)
+    catch (const exception &ex)
     {
-        std::cerr << "Standard Exception: " << ex.what() << std::endl;
+        cerr << "Standard Exception: " << ex.what() << endl;
         return 1;
     }
     catch (...)
     {
-        std::cerr << "Unknown Exception." << std::endl;
+        cerr << "Unknown Exception." << endl;
         return 1;
     }
     return 0;
