@@ -1,24 +1,12 @@
-# Use an official Maven image to build the application
-FROM maven:3.8.5-openjdk-17 AS build
-
-# Set the working directory inside the container
+# Use Maven to build the application
+FROM maven:3.8.6-openjdk-11 AS builder
 WORKDIR /app
-
-# Copy the project files
+COPY pom.xml .
 COPY src ./src
-COPY pom.xml ./
-
-# Build the Java application
 RUN mvn clean package
 
-# Use an official OpenJDK image to run the application
-FROM openjdk:17-jdk-slim
-
-# Set the working directory
+# Use a slim JDK to run the application
+FROM openjdk:11-jdk-slim
 WORKDIR /app
-
-# Copy the built jar file from the build stage
-COPY --from=build /app/target/MockDataGenerator-1.0-SNAPSHOT.jar ./MockDataGenerator.jar
-
-# Command to run the application
+COPY --from=builder /app/target/mock-data-generator-1.0-SNAPSHOT.jar /app/MockDataGenerator.jar
 CMD ["java", "-jar", "MockDataGenerator.jar"]
